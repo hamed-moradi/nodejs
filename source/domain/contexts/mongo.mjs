@@ -1,0 +1,1 @@
+const mongoConnection = 'mongodb://192.168.188.128:27017/db';

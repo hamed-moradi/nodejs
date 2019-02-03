@@ -9,7 +9,8 @@ app.use(express.static('public'));
 
 import mongoose from 'mongoose';
 const mongoConnection = 'mongodb://192.168.188.128:27017/express-api';
-mongoose.connect(mongoConnection);
+//'mongodb://username:password@host:port/database?options'
+mongoose.connect(mongoConnection, {useNewUrlParser: true});
 
 // import multer from 'multer';
 // app.use(multer({ dest: '/tmp/' }));

@@ -10,7 +10,7 @@ app.use(express.static('public'));
 import mongoose from 'mongoose';
 const mongoConnection = 'mongodb://192.168.188.128:27017/express-api';
 //'mongodb://username:password@host:port/database?options'
-mongoose.connect(mongoConnection, {useNewUrlParser: true});
+mongoose.connect(mongoConnection, { useNewUrlParser: true });
 
 // import multer from 'multer';
 // app.use(multer({ dest: '/tmp/' }));
@@ -30,17 +30,17 @@ app.use(cookieParser());
 
 //#region routes
 import homeRouter from './presentation/routes/home';
-app.use('/home', homeRouter);
+app.use('/', homeRouter);
 
 import userRouter from './presentation/routes/user';
 app.use('/user', userRouter);
 //#endregion
 
 //#region error handler
-// catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//     next(httpError(404));
-// });
+//catch 404 and forward to error handler
+app.use((req, res, next) => {
+    next(httpError(404));
+});
 
 // error handler
 // app.use(function (err, req, res, next) {

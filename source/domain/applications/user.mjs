@@ -1,6 +1,7 @@
 //#region definations
 let userApp = {};
 import userModel from '../models/user';
+import { model } from 'mongoose';
 //#endregion
 
 userApp.getById = async (_id) => {
@@ -20,5 +21,20 @@ userApp.getAll = async () => {
     });
     return result;
 };
+
+userApp.update = async (model) => {
+    await userModel.findByIdAndUpdate(model.id, (err, user) => {
+        if (err) throw err;
+    });
+    return model;
+};
+
+userApp.insert = async (model) => {
+    var result;
+    await userModel.add(model, (err, user) => {
+        result = user;
+    });
+    return result;
+}
 
 export default userApp;

@@ -1,7 +1,6 @@
 //#region definations
 let userApp = {};
 import userModel from '../models/user';
-import { model } from 'mongoose';
 //#endregion
 
 userApp.getById = async (_id) => {

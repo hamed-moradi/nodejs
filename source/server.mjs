@@ -14,7 +14,8 @@ mongoose.connect(mongoConnection, { useNewUrlParser: true });
 
 import mysql from 'mysql';
 const mysqlConnection = mysql.createConnection({
-    host: '192.168.188.128:3306',
+    host: '192.168.188.128',
+    port: 3306,
     user: 'admin',
     password: '123',
     database: 'dandy_lady'

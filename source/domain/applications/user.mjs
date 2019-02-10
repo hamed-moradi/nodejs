@@ -4,8 +4,8 @@ import mssql from '../contexts/mssql';
 //import problem from '../applications/problem';
 //#endregion
 
-userApp.getById = async (_id) => {
-    var query = 'select * from user where id = ' + _id + ' limit 1';
+userApp.getById = async (id) => {
+    var query = `select * from user where id = ${id} limit 1`;
     var result = await mssql.query(query);
     return result;
 };

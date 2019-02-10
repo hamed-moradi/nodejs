@@ -1,22 +1,31 @@
 //#region definations
 let customerApp = {};
-import mssql from '../contexts/mssql';
+import { mssql, pool } from '../contexts/mssql';
+//import problem from '../applications/problem';
 //#endregion
 
 customerApp.getById = async (id) => {
-    var result;
-    await mssql.query(`select * from customer where id = ${id}`, (err, test) => {
-        if (err) {
-            throw err;
-        };
-        result = test;
-    });
-    return result;
+    await mssql;
+    try {
+        const request = new mssql.Request(pool);
+        var result = request
+            //.input('@Id', mssql.Int, id)
+            //.output('StatusCode', mssql.SmallInt)
+            //.execute('api_customer_getById');
+            .query(`select * from customer where id = ${id}`);
+        return result;
+    }
+    catch (err) {
+        //problem.insert(err);
+        throw err;
+    }
 };
 
 customerApp.getAll = async () => {
-    var result = await mssql.request().query('select * from customer');
-    return result;
+    const pool = await mssql;
+    var result = await pool.request()
+        .query(`select * from customer`);
+    return result.recordset;
 };
 
 export default customerApp;

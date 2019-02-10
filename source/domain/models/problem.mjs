@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 var problemSchema = new mongoose.Schema({
-    problemType: { type: number, required: true },
-    url: { type: string, required: true },
-    message: { type: string, required: true },
-    stack: { type: string },
-    createdAt: { type: datetime }
+    problemType: { type: Number, required: true },
+    url: { type: String, required: true },
+    message: { type: String, required: true },
+    stack: { type: String },
+    createdAt: { type: Date }
 });
 
 export default mongoose.model('problem', problemSchema);

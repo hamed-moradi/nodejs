@@ -20,8 +20,9 @@ const config = {
     }
 };
 
-var connection = mssql.connect(config, (err) => {
-    if (err) { throw err; };
-});
+const connectionPool = new mssql.ConnectionPool(config).connect();
+// .then(pool => { return pool })
+// .catch(err => { throw err; });
+//connectionPool.on('error', err => { throw err; });
 
-export default connection;
+export default { mssql, connectionPool };

@@ -1,5 +1,5 @@
 //#region definations
-let problemApp;
+let problemApp = {};
 import problemModel from '../models/problem';
 //#endregion
 

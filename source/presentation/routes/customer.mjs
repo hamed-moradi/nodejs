@@ -11,4 +11,9 @@ router.get('/:id', async (req, res) => {
     res.send(resHelper.ok({ data: result }));
 });
 
+router.get('/', async (req, res) => {
+    var result = await customerApp.getAll();
+    res.send(resHelper.ok({ data: result }));
+});
+
 export default router;

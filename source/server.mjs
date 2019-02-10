@@ -7,21 +7,6 @@ app.use(express.static('public'));
 //app.use(express.json());
 //app.use(express.urlencoded({ extended=false }));
 
-import mongoose from 'mongoose';
-const mongoConnection = 'mongodb://192.168.188.128:27017/dandy_lady';
-//'mongodb://username:password@host:port/database?options'
-mongoose.connect(mongoConnection, { useNewUrlParser: true });
-
-import mysql from 'mysql';
-const mysqlConnection = mysql.createConnection({
-    host: '192.168.188.128',
-    port: 3306,
-    user: 'admin',
-    password: '123',
-    database: 'dandy_lady'
-});
-mysqlConnection.connect((err) => { if (err) throw err; });
-
 // import multer from 'multer';
 // app.use(multer({ dest: '/tmp/' }));
 

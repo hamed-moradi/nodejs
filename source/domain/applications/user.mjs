@@ -1,23 +1,17 @@
 //#region definations
 let userApp = {};
-import userModel from '../models/user';
+import mysql from '../contexts/mysql';
+//import problem from '../applications/problem';
 //#endregion
 
 userApp.getById = async (_id) => {
-    var result;
-    await userModel.findById(_id, function (err, user) {
-        if (err) throw err;
-        result = user
-    });
+    var query = 'select * from user where id = ' + _id + ' limit 1';
+    var result = await mysql.query(query);
     return result;
 };
 
 userApp.getAll = async () => {
-    var result;
-    await userModel.find((err, users) => {
-        if (err) throw err;
-        result = users;
-    });
+    var result = await mysql.query('select * from user');
     return result;
 };
 

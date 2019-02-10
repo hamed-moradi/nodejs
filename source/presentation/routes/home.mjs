@@ -2,7 +2,7 @@
 import express from 'express';
 var router = express.Router({ caseSensitive: false });
 
-import resHelper from '../helpers/response'
+import resHelper from '../helpers/response';
 //#endregion
 
 router.get('/', function (req, res) {

@@ -1,17 +1,17 @@
 //#region definations
 let userApp = {};
-import mysql from '../contexts/mysql';
+import mssql from '../contexts/mssql';
 //import problem from '../applications/problem';
 //#endregion
 
 userApp.getById = async (_id) => {
     var query = 'select * from user where id = ' + _id + ' limit 1';
-    var result = await mysql.query(query);
+    var result = await mssql.query(query);
     return result;
 };
 
 userApp.getAll = async () => {
-    var result = await mysql.query('select * from user');
+    var result = await mssql.query('select * from user');
     return result;
 };
 
@@ -28,6 +28,6 @@ userApp.insert = async (model) => {
         result = user;
     });
     return result;
-}
+};
 
 export default userApp;

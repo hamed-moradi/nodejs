@@ -13,8 +13,8 @@ app.use(express.static('public'));
 import bodyParser from 'body-parser';
 app.use(bodyParser.json());
 
-import cookieParser from 'cookie-parser';
-app.use(cookieParser());
+// import cookieParser from 'cookie-parser';
+// app.use(cookieParser());
 
 //import httpError from 'http-errors';
 //app.use(httpError());
@@ -29,6 +29,9 @@ app.use('/', homeRouter);
 
 import userRouter from './presentation/routes/user';
 app.use('/user', userRouter);
+
+import customerRouter from './presentation/routes/customer';
+app.use('/customer', customerRouter);
 //#endregion
 
 //#region error handler

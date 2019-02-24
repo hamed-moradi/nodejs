@@ -1,18 +1,17 @@
-//#region definations
+
 let customerApp = {};
-import { mssql, pool } from '../contexts/mssql';
+let { mssql, pool } = require('../contexts/mssql');
 //import problem from '../applications/problem';
-//#endregion
 
 customerApp.getById = async (id) => {
-    await mssql;
+    await pool;
     try {
-        const request = new mssql.Request(pool);
-        var result = request
+        const request = pool.request();// new mssql.Request(connectionPool);
+        var result = request.query(`select * from customer where id = ${id}`);
             //.input('@Id', mssql.Int, id)
             //.output('StatusCode', mssql.SmallInt)
             //.execute('api_customer_getById');
-            .query(`select * from customer where id = ${id}`);
+            
         return result;
     }
     catch (err) {
@@ -28,4 +27,4 @@ customerApp.getAll = async () => {
     return result.recordset;
 };
 
-export default customerApp;
+module.exports = customerApp;

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+let mongoose = require('mongoose');
 
 var problemSchema = new mongoose.Schema({
     problemType: { type: Number, required: true },
@@ -8,4 +8,4 @@ var problemSchema = new mongoose.Schema({
     createdAt: { type: Date }
 });
 
-export default mongoose.model('problem', problemSchema);
+module.exports = mongoose.model('problem', problemSchema);

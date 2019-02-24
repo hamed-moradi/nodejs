@@ -1,7 +1,6 @@
 'use strict';
 
-//#region modules
-import express from 'express';
+let express = require('express');
 var app = express();
 app.use(express.static('public'));
 //app.use(express.json());
@@ -10,7 +9,7 @@ app.use(express.static('public'));
 // import multer from 'multer';
 // app.use(multer({ dest: '/tmp/' }));
 
-import bodyParser from 'body-parser';
+let bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 // import cookieParser from 'cookie-parser';
@@ -21,20 +20,16 @@ app.use(bodyParser.json());
 
 // import morgan from 'morgan';
 // app.use(morgan('dev'));
-//#endregion
 
-//#region routes
-import homeRouter from './presentation/routes/home';
+let homeRouter = require('./presentation/routes/home');
 app.use('/', homeRouter);
 
-import userRouter from './presentation/routes/user';
+let userRouter = require('./presentation/routes/user');
 app.use('/user', userRouter);
 
-import customerRouter from './presentation/routes/customer';
+let customerRouter = require('./presentation/routes/customer');
 app.use('/customer', customerRouter);
-//#endregion
 
-//#region error handler
 //catch 404 and forward to error handler
 app.use((req, res, next) => {
     next(httpError(404));
@@ -50,6 +45,5 @@ app.use((req, res, next) => {
 //     res.status(err.status || 500);
 //     res.render('error');
 // });
-//#endregion
 
 app.listen(1366);

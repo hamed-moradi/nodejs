@@ -1,13 +1,12 @@
-//#region definations
+
 let problemApp = {};
-import problemModel from '../models/problem';
-//#endregion
+let problemModel = require('../models/problem');
 
 problemApp.insert = async (model) => {
     problemModel.insert(model);
 };
 
-export default problemApp;
+module.exports = problemApp;
 
 // userApp.getById = async (_id) => {
 //     var result;

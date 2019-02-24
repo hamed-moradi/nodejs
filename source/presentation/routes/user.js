@@ -1,9 +1,8 @@
-//#region definations
-import express from 'express';
+
+let express = require('express');
 let router = express.Router({ caseSensitive: false });
-import resHelper from '../helpers/response';
-import userService from '../../domain/applications/user';
-//#endregion
+let resHelper = require('../helpers/response');
+let userService = require('../../domain/applications/user');
 
 //get by id
 router.get('/:id', async (req, res) => {
@@ -32,4 +31,4 @@ router.post('/insert', async (req, res) => {
     res.send(resHelper.ok({ data: req.body.name }));
 });
 
-export default router;
+module.exports = router;

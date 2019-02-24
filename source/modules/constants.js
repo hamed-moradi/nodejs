@@ -2,4 +2,4 @@ let constant = {};
 
 constant.problemType = ['exception', 'bedRequest'];
 
-export default constant;
+module.exports = constant;

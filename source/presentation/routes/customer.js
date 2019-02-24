@@ -1,10 +1,9 @@
-//#region definations
-import express from 'express';
+
+let express = require('express');
 let router = express.Router({ caseSensitive: false });
 
-import customerApp from '../../domain/applications/customer';
-import resHelper from '../helpers/response';
-//#endregion
+let customerApp = require('../../domain/applications/customer');
+let resHelper = require('../helpers/response');
 
 router.get('/:id', async (req, res) => {
     var result = await customerApp.getById(req.params.id);
@@ -16,4 +15,4 @@ router.get('/', async (req, res) => {
     res.send(resHelper.ok({ data: result }));
 });
 
-export default router;
+module.exports = router;

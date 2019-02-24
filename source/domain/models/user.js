@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+let mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
     username: { type: String, required: true, max: 32 },
@@ -7,4 +7,4 @@ var userSchema = new mongoose.Schema({
     password: { type: String, max: 32 }
 });
 
-export default mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);

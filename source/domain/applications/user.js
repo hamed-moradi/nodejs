@@ -1,8 +1,7 @@
-//#region definations
+
 let userApp = {};
-import mssql from '../contexts/mssql';
+let { mssql, pool } = require('../contexts/mssql');
 //import problem from '../applications/problem';
-//#endregion
 
 userApp.getById = async (id) => {
     var query = `select * from user where id = ${id} limit 1`;
@@ -30,4 +29,4 @@ userApp.insert = async (model) => {
     return result;
 };
 
-export default userApp;
+module.exports = userApp;

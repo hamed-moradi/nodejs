@@ -1,29 +1,23 @@
 
 let customerApp = {};
-let { mssql, pool } = require('../contexts/mssql');
-//import problem from '../applications/problem';
+const { mssql, pool } = require('../contexts/mssql');
 
 customerApp.getById = async (id) => {
-    await pool;
-    try {
-        const request = pool.request();// new mssql.Request(connectionPool);
-        var result = request.query(`select * from customer where id = ${id}`);
-            //.input('@Id', mssql.Int, id)
-            //.output('StatusCode', mssql.SmallInt)
-            //.execute('api_customer_getById');
-            
-        return result;
-    }
-    catch (err) {
-        //problem.insert(err);
-        throw err;
-    }
+    await pool.connect();
+    var request = new mssql.Request(pool);
+    var result = await request.query(`select * from customer where id = ${id}`);
+    //.input('@Id', mssql.Int, id)
+    //.output('StatusCode', mssql.SmallInt)
+    //.execute('api_customer_getById');
+    pool.close();
+    return result.recordset;
 };
 
 customerApp.getAll = async () => {
-    const pool = await mssql;
-    var result = await pool.request()
-        .query(`select * from customer`);
+    await pool.connect();
+    var request = new mssql.Request(pool);
+    var result = await request.query(`select * from customer`);
+    pool.close();
     return result.recordset;
 };
 

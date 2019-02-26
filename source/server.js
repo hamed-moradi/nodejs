@@ -15,9 +15,6 @@ app.use(bodyParser.json());
 // import cookieParser from 'cookie-parser';
 // app.use(cookieParser());
 
-//import httpError from 'http-errors';
-//app.use(httpError());
-
 // import morgan from 'morgan';
 // app.use(morgan('dev'));
 
@@ -30,9 +27,10 @@ app.use('/user', userRouter);
 let customerRouter = require('./presentation/routes/customer');
 app.use('/customer', customerRouter);
 
+let responseHelper = require('./presentation/helpers/response')
 //catch 404 and forward to error handler
 app.use((req, res, next) => {
-    next(httpError(404));
+    //next(responseHelper.notFound());
 });
 
 // error handler

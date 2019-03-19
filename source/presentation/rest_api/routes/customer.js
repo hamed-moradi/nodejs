@@ -2,7 +2,7 @@
 let express = require('express');
 let router = express.Router({ caseSensitive: false });
 
-let customerApp = require('../../domain/applications/customer');
+let customerApp = require('../../../domain/applications/customer');
 let resHelper = require('../helpers/response');
 
 router.get('/:id', async (req, res) => {

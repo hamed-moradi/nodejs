@@ -18,16 +18,16 @@ app.use(bodyParser.json());
 // import morgan from 'morgan';
 // app.use(morgan('dev'));
 
-let homeRouter = require('./presentation/routes/home');
+let homeRouter = require('./presentation/rest_api/routes/home');
 app.use('/', homeRouter);
 
-let userRouter = require('./presentation/routes/user');
+let userRouter = require('./presentation/rest_api/routes/user');
 app.use('/user', userRouter);
 
-let customerRouter = require('./presentation/routes/customer');
+let customerRouter = require('./presentation/rest_api/routes/customer');
 app.use('/customer', customerRouter);
 
-let responseHelper = require('./presentation/helpers/response')
+let responseHelper = require('./presentation/rest_api/helpers/response')
 //catch 404 and forward to error handler
 app.use((req, res, next) => {
     //next(responseHelper.notFound());

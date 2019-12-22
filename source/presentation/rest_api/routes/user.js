@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
 
 //update
 router.put('/update/:id', async (req, res) => {
-    var message = 'the item with id = ${req.params.id} has been updated';
-    res.send(message);
+    var result = resHelper.ok({ message: `the item with id = ${req.params.id} has been updated` });
+    res.send(result);
 });
 
 //insert

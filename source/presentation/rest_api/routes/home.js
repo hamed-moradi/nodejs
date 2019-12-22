@@ -1,10 +1,11 @@
 
-let express = require('express');
+import express from 'express';
 let router = express.Router({ caseSensitive: false });
-let resHelper = require('../helpers/response');
+
+import resHelper from '../helpers/response.js';
 
 router.get('/', function (req, res) {
     res.send(new resHelper.ok({ message: 'Web API is runnig ...' }));
 });
 
-module.exports = router;
+export default router;

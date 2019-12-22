@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f9bee5ff-09ff-439e-9d67-d3426bd5fc5b}</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <ProjectView>ProjectFiles</ProjectView>
+    <StartupFile>source\server.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartWebBrowser>True</StartWebBrowser>
+    <SaveNodeJsSettingsInProjectFile>False</SaveNodeJsSettingsInProjectFile>
+    <ScriptArguments>
+    </ScriptArguments>
+    <NodejsPort>
+    </NodejsPort>
+    <Name>biavoo</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="source\server.js" />
+    <Content Include="source\modules\app-settings.js" />
+    <Content Include="source\modules\constants.js" />
+    <Content Include="source\domain\applications\change-log.js" />
+    <Content Include="source\domain\applications\customer.js" />
+    <Content Include="source\domain\applications\problem.js" />
+    <Content Include="source\domain\applications\user.js" />
+    <Content Include="source\domain\contexts\mongo.js" />
+    <Content Include="source\domain\contexts\mssql.js" />
+    <Content Include="source\domain\models\change-log.js" />
+    <Content Include="source\domain\models\problem.js" />
+    <Content Include="source\domain\models\user.js" />
+    <Content Include="source\presentation\mobile_ui\views\index.html" />
+    <Content Include="source\presentation\rest_api\helpers\response.js" />
+    <Content Include="source\presentation\rest_api\models\general.js" />
+    <Content Include="source\presentation\rest_api\routes\customer.js" />
+    <Content Include="source\presentation\rest_api\routes\home.js" />
+    <Content Include="source\presentation\rest_api\routes\user.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="source" />
+    <Folder Include="source\domain" />
+    <Folder Include="source\domain\applications" />
+    <Folder Include="source\domain\contexts" />
+    <Folder Include="source\domain\models" />
+    <Folder Include="source\modules" />
+    <Folder Include="source\presentation" />
+    <Folder Include="source\presentation\mobile_ui" />
+    <Folder Include="source\presentation\mobile_ui\contents" />
+    <Folder Include="source\presentation\mobile_ui\scripts" />
+    <Folder Include="source\presentation\mobile_ui\styles" />
+    <Folder Include="source\presentation\mobile_ui\views" />
+    <Folder Include="source\presentation\rest_api" />
+    <Folder Include="source\presentation\rest_api\helpers" />
+    <Folder Include="source\presentation\rest_api\models" />
+    <Folder Include="source\presentation\rest_api\routes" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,6 +1,6 @@
-let mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const connection = 'mongodb://192.168.188.128:27017/DandyLady';
+const connection = 'mongodb://localhost:27017/biavoo';
 mongoose.connect(connection, { useNewUrlParser: true });
 
-module.exports = mongoose;
+export default mongoose;

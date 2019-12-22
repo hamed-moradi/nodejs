@@ -1,8 +1,8 @@
 
-let express = require('express');
+import express from 'express';
 let router = express.Router({ caseSensitive: false });
-let resHelper = require('../helpers/response');
-let userService = require('../../../domain/applications/user');
+import resHelper from '../helpers/response.js';
+import userService from '../../../domain/applications/user.js';
 
 //get by id
 router.get('/:id', async (req, res) => {
@@ -31,4 +31,4 @@ router.post('/insert', async (req, res) => {
     res.send(resHelper.ok({ data: req.body.name }));
 });
 
-module.exports = router;
+export default router;

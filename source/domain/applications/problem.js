@@ -1,12 +1,12 @@
 
 let problemApp = {};
-let problemModel = require('../models/problem');
+import problemModel from '../models/problem.js';
 
 problemApp.insert = async (model) => {
     problemModel.insert(model);
 };
 
-module.exports = problemApp;
+export default problemApp;
 
 // userApp.getById = async (_id) => {
 //     var result;

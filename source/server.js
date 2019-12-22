@@ -1,47 +1,62 @@
 'use strict';
 
-let express = require('express');
+import http from 'http';
+import express from "express";
+
 var app = express();
 app.use(express.static('public'));
-//app.use(express.json());
+app.use(express.json());
 //app.use(express.urlencoded({ extended=false }));
 
-// import multer from 'multer';
-// app.use(multer({ dest: '/tmp/' }));
+//import multer from 'multer';
+//app.use(multer({ dest: '/tmp/' }));
 
-let bodyParser = require('body-parser');
-app.use(bodyParser.json());
+//let bodyParser = require('body-parser');
+//app.use(bodyParser.json());
 
-// import cookieParser from 'cookie-parser';
-// app.use(cookieParser());
+import cookieParser from 'cookie-parser';
+app.use(cookieParser());
 
-// import morgan from 'morgan';
-// app.use(morgan('dev'));
+import morgan from 'morgan';
+app.use(morgan('dev'));
 
-let homeRouter = require('./presentation/rest_api/routes/home');
+import homeRouter from './presentation/rest_api/routes/home.js';
 app.use('/', homeRouter);
 
-let userRouter = require('./presentation/rest_api/routes/user');
+import userRouter from './presentation/rest_api/routes/user.js';
 app.use('/user', userRouter);
 
-let customerRouter = require('./presentation/rest_api/routes/customer');
+import customerRouter from './presentation/rest_api/routes/customer.js';
 app.use('/customer', customerRouter);
 
-let responseHelper = require('./presentation/rest_api/helpers/response')
+//import responseHelper from './presentation/rest_api/helpers/response';
+
 //catch 404 and forward to error handler
 app.use((req, res, next) => {
     //next(responseHelper.notFound());
 });
 
 // error handler
-// app.use(function (err, req, res, next) {
-//     // set locals, only providing error in development
-//     res.locals.message = err.message;
-//     res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-//     // render the error page
-//     res.status(err.status || 500);
-//     res.render('error');
-// });
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+});
 
-app.listen(1366);
+var port = process.env.PORT || 1337;
+app.listen(port);
+
+//http.createServer(function(req, res) {
+//    res.writeHead(200, { 'Content-Type': 'text/plain' });
+//    res.end('Hello World\n');
+//}).listen(port);
+
+
+
+
+
+

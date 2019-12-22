@@ -1,17 +1,20 @@
 
 let userApp = {};
-let { mssql, pool } = require('../contexts/mssql');
+import context from '../contexts/mssql.js';
 //import problem from '../applications/problem';
 
 userApp.getById = async (id) => {
     var query = `select * from user where id = ${id} limit 1`;
-    var result = await mssql.query(query);
+    var result = await context.mssql.query(query);
     return result;
 };
 
 userApp.getAll = async () => {
-    var result = await mssql.query('select * from user');
-    return result;
+    await context.pool.connect();
+    var request = new context.mssql.Request(context.pool);
+    var result = await request.query(`select * from dbo.[user]`);
+    context.pool.close();
+    return result.recordset;
 };
 
 userApp.update = async (model) => {
@@ -29,4 +32,4 @@ userApp.insert = async (model) => {
     return result;
 };
 
-module.exports = userApp;
+export default userApp;

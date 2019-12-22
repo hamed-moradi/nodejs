@@ -19,5 +19,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hamèd",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }

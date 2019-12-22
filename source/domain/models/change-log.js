@@ -1,4 +1,4 @@
-let mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
 var changeLogSchema = new mongoose.Schema({
     entity: { type: string, required: true, max: 32 },
@@ -7,4 +7,4 @@ var changeLogSchema = new mongoose.Schema({
     description: { type: string }
 });
 
-module.exports = mongoose.model('changeLog', changeLogSchema);
+export default mongoose.model('changeLog', changeLogSchema);

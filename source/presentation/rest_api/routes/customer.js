@@ -1,9 +1,9 @@
 
-let express = require('express');
+import express from 'express';
 let router = express.Router({ caseSensitive: false });
 
-let customerApp = require('../../../domain/applications/customer');
-let resHelper = require('../helpers/response');
+import customerApp from '../../../domain/applications/customer.js';
+import resHelper from '../helpers/response.js';
 
 router.get('/:id', async (req, res) => {
     var result = await customerApp.getById(req.params.id);
@@ -15,4 +15,4 @@ router.get('/', async (req, res) => {
     res.send(resHelper.ok({ data: result }));
 });
 
-module.exports = router;
+export default router;

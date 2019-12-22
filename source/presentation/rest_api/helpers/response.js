@@ -1,4 +1,4 @@
-let responseModel = require('../models/general');
+import responseModel from '../models/general.js';
 
 function ok({ data = null, totalPages = 0, statusCode = 200, message = 'succeed' }) {
     return new responseModel(data, totalPages, statusCode, message, 1);
@@ -10,4 +10,4 @@ function internalServerError({ data = null, totalPages = 0, statusCode = 500, me
     return new responseModel(data, totalPages, statusCode, message, 1);
 }
 
-module.exports = { ok, badRequest, internalServerError };
+export default { ok, badRequest, internalServerError };

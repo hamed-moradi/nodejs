@@ -6,4 +6,4 @@ var response = function (data, totalPages, statusCode, message, version) {
     this.version = version;
 };
 
-module.exports = response;
+export default response;

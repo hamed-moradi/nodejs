@@ -1,7 +1,7 @@
 //#region definations
 let changeLogApp;
-let changeLogModel = require('../models/change-log');
-let problemApp = require('../applications/problem');
+import changeLogModel from '../models/change-log.js';
+import problemApp from '../applications/problem.js';
 //#endregion
 
 changeLogApp.insert = async (model) => {
@@ -13,4 +13,4 @@ changeLogApp.insert = async (model) => {
     });
 }
 
-module.require = changeLogApp;
+export default changeLogApp;

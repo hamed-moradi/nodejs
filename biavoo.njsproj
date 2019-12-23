@@ -13,12 +13,11 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <StartWebBrowser>True</StartWebBrowser>
+    <StartWebBrowser>False</StartWebBrowser>
     <SaveNodeJsSettingsInProjectFile>False</SaveNodeJsSettingsInProjectFile>
     <ScriptArguments>
     </ScriptArguments>
-    <NodejsPort>
-    </NodejsPort>
+    <NodejsPort>1337</NodejsPort>
     <Name>biavoo</Name>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
@@ -26,6 +25,15 @@
   <ItemGroup>
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="source\domain\contexts\mysql-context.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="source\domain\models\mssql.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="source\presentation\rest_api\models\uservm.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="source\server.js" />
     <Content Include="source\modules\app-settings.js" />
     <Content Include="source\modules\constants.js" />
@@ -41,9 +49,9 @@
     <Content Include="source\presentation\mobile_ui\views\index.html" />
     <Content Include="source\presentation\rest_api\helpers\response.js" />
     <Content Include="source\presentation\rest_api\models\general.js" />
-    <Content Include="source\presentation\rest_api\routes\customer.js" />
-    <Content Include="source\presentation\rest_api\routes\home.js" />
-    <Content Include="source\presentation\rest_api\routes\user.js" />
+    <Content Include="source\presentation\rest_api\routes\customer-router.js" />
+    <Content Include="source\presentation\rest_api\routes\home-router.js" />
+    <Content Include="source\presentation\rest_api\routes\user-router.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="source" />

@@ -1,5 +1,5 @@
 
-import context from '../contexts/mssql.js';
+import context from '../../domain/_app/mssql-context.js';
 
 let getById = async (id) => {
     await context.pool.connect();

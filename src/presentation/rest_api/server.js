@@ -20,13 +20,17 @@ app.use(cookieParser());
 import morgan from 'morgan';
 app.use(morgan('dev'));
 
-import homeRouter from './presentation/rest_api/routes/home-router.js';
+// register routers
+//import routerRegistrar from './_app/router-registrar.js';
+//routerRegistrar.load(app);
+
+import homeRouter from './routes/home-router.js';
 app.use('/', homeRouter);
 
-import userRouter from './presentation/rest_api/routes/user-router.js';
+import userRouter from './routes/user-router.js';
 app.use('/user', userRouter);
 
-import customerRouter from './presentation/rest_api/routes/customer-router.js';
+import customerRouter from './routes/customer-router.js';
 app.use('/customer', customerRouter);
 
 //import responseHelper from './presentation/rest_api/helpers/response';
@@ -54,9 +58,3 @@ app.listen(port);
 //    res.writeHead(200, { 'Content-Type': 'text/plain' });
 //    res.end('Hello World\n');
 //}).listen(port);
-
-
-
-
-
-

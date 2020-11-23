@@ -1,0 +1,15 @@
+{
+  "authentication": {
+    "issuer": "http://localhost",
+    "audience": "414e1927a3884f68abc79f7283837fd1",
+    "securityKey": "qMCdFDQuF23RV1Y-1Gq9L3cF3VmuFwVbam4fMTdAfpo"
+  },
+  "connectionString": {
+    "msSql": "Data Source=.;Initial Catalog=;User ID=sa;Password=123;MultipleActiveResultSets=true;",
+    "mongo": "mongodb://localhost:27017/db"
+  },
+  "server": {
+    "domain": "",
+    "port": ""
+  }
+}

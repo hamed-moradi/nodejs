@@ -2,7 +2,7 @@
 import express from 'express';
 let router = express.Router({ caseSensitive: false });
 
-import customerApp from '../../../domain/applications/customer.js';
+import customerApp from '../../../core/application/services/customer.js';
 import resHelper from '../helpers/response.js';
 
 router.get('/:id', async (req, res) => {

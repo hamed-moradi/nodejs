@@ -1,6 +1,6 @@
 
-import context from '../contexts/mssql.js';
-import sqlmodel from '../models/mssql.js';
+import context from '../../domain/_app/mssql-context.js';
+import sqlmodel from '../../domain/entities/mssql.js';
 //import problem from '../applications/problem';
 
 let getById = async (id) => {

@@ -2,7 +2,7 @@
 import express from 'express';
 let router = express.Router({ caseSensitive: false });
 import resHelper from '../helpers/response.js';
-import userService from '../../../domain/applications/user.js';
+import userService from '../../../core/application/services/user.js';
 import uservm from '../models/uservm.js';
 
 //get by id

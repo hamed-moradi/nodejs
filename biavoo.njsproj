@@ -7,7 +7,7 @@
     <ProjectHome>
     </ProjectHome>
     <ProjectView>ProjectFiles</ProjectView>
-    <StartupFile>src\presentation\rest_api\server.js</StartupFile>
+    <StartupFile>server.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
@@ -20,68 +20,64 @@
     <NodejsPort>1337</NodejsPort>
     <Name>biavoo</Name>
     <NodeExePath>C:\Program Files\nodejs\node.exe</NodeExePath>
-    <NodeExeArguments>--experimental-json-modules</NodeExeArguments>
+    <NodeExeArguments>--experimental-modules</NodeExeArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
-    <Content Include="src\core\domain\_app\mysql-context.js">
+    <Content Include="src\application\_app\mssql-repository.js" />
+    <Content Include="src\domain\_app\mysql-context.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\core\domain\entities\mssql.js">
+    <Content Include="src\domain\entities\account.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\presentation\rest_api\app-settings.json">
+    <Content Include="app-settings.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\presentation\rest_api\models\uservm.js">
+    <Content Include="src\model\view-models\account-viewModel.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\presentation\rest_api\_app\router-registrar.js" />
-    <Content Include="src\presentation\rest_api\server.js" />
-    <Content Include="src\assets\model\app-settings.js" />
-    <Content Include="src\assets\model\constants.js" />
-    <Content Include="src\core\application\services\change-log.js" />
-    <Content Include="src\core\application\services\customer.js" />
-    <Content Include="src\core\application\services\problem.js" />
-    <Content Include="src\core\application\services\user.js" />
-    <Content Include="src\core\domain\_app\mongo-context.js" />
-    <Content Include="src\core\domain\_app\mssql-context.js" />
-    <Content Include="src\core\domain\collections\change-log.js" />
-    <Content Include="src\core\domain\collections\problem.js" />
-    <Content Include="src\core\domain\collections\user.js" />
-    <Content Include="src\presentation\mobile_ui\views\index.html" />
-    <Content Include="src\presentation\rest_api\helpers\response.js" />
-    <Content Include="src\presentation\rest_api\models\general.js" />
-    <Content Include="src\presentation\rest_api\routes\customer-router.js" />
-    <Content Include="src\presentation\rest_api\routes\home-router.js" />
-    <Content Include="src\presentation\rest_api\routes\user-router.js" />
+    <Content Include="src\rest-api\helpers\jwt-helper.js" />
+    <Content Include="src\rest-api\_app\router-registrar.js" />
+    <Content Include="server.js" />
+    <Content Include="src\model\_app\constants.js" />
+    <Content Include="src\application\services\customer-service.js" />
+    <Content Include="src\application\services\problem.js" />
+    <Content Include="src\application\services\account-service.js" />
+    <Content Include="src\domain\_app\mongo-context.js" />
+    <Content Include="src\domain\_app\mssql-context.js" />
+    <Content Include="src\domain\collections\problem.js" />
+    <Content Include="src\domain\collections\user.js" />
+    <Content Include="src\rest-api\helpers\response.js" />
+    <Content Include="src\model\_app\general.js" />
+    <Content Include="src\rest-api\routes\customer-router.js" />
+    <Content Include="src\rest-api\routes\home-router.js" />
+    <Content Include="src\rest-api\routes\account-router.js" />
+    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
-    <Folder Include="src\assets\model\" />
+    <Folder Include="src\application\_app\" />
+    <Folder Include="src\model\" />
     <Folder Include="src\assets\utility\" />
-    <Folder Include="src\core\" />
-    <Folder Include="src\core\application\" />
-    <Folder Include="src\core\application\services\" />
-    <Folder Include="src\core\domain\_app\" />
-    <Folder Include="src\core\domain\" />
+    <Folder Include="src\infrastructure\" />
+    <Folder Include="src\application\" />
+    <Folder Include="src\application\services\" />
+    <Folder Include="src\domain\_app\" />
+    <Folder Include="src\domain\" />
     <Folder Include="src\assets\" />
-    <Folder Include="src\core\domain\entities\" />
-    <Folder Include="src\core\domain\collections\" />
-    <Folder Include="src\presentation\" />
-    <Folder Include="src\presentation\mobile_ui\" />
-    <Folder Include="src\presentation\mobile_ui\contents\" />
-    <Folder Include="src\presentation\mobile_ui\scripts\" />
-    <Folder Include="src\presentation\mobile_ui\styles\" />
-    <Folder Include="src\presentation\mobile_ui\views\" />
-    <Folder Include="src\presentation\rest_api\" />
-    <Folder Include="src\presentation\rest_api\helpers\" />
-    <Folder Include="src\presentation\rest_api\models\" />
-    <Folder Include="src\presentation\rest_api\_app\" />
-    <Folder Include="src\presentation\rest_api\routes\" />
+    <Folder Include="src\domain\entities\" />
+    <Folder Include="src\domain\collections\" />
+    <Folder Include="src\model\binding-models\" />
+    <Folder Include="src\model\_app\" />
+    <Folder Include="src\model\view-models\" />
+    <Folder Include="src\rest-api\" />
+    <Folder Include="src\rest-api\helpers\" />
+    <Folder Include="src\rest-api\_app\" />
+    <Folder Include="src\rest-api\routes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

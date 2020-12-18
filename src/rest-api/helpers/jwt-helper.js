@@ -8,4 +8,14 @@ let generate = (signinModel) => {
     return "Bearer " + accessToken;
 }
 
-export default { generate };
+let extract = (authHeader) => {
+    const token = authHeader.split(' ')[1];
+    jwt.verify(token, appSetting.authentication.securityKey, (err, user) => {
+        if (err) {
+            return { status: 500, message: err };
+        }
+        return { status: 200, data: user };
+    });
+}
+
+export default { generate, extract };

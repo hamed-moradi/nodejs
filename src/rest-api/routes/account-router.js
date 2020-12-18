@@ -7,21 +7,40 @@ import accountService from '../../application/services/account-service.js';
 import jwtHelper from "../helpers/jwt-helper.js";
 import accountViewModel from '../../model/view-models/account-viewModel.js';
 
-//sign-in
+// sign-in
 router.post("/signin", async (req, res) => {
     var signin = req.body;
-    if (signin.username != undefined && signin.username != null && signin.username != "" &&
-        signin.password != undefined && signin.password != null && signin.password != "") {
+    if (signin.username != undefined && signin.username != null && signin.username != '' &&
+        signin.password != undefined && signin.password != null && signin.password != '') {
 
         try {
             return res.send(jwtHelper.generate(signin));
         }
         catch (err) {
-            res.status = 500;
+            res.status(500);
             res.send(err);
         }
     }
-    res.status = 400;
+    res.status(400);
+    return res.send()
+});
+
+// sign-up
+router.post("/signup", async (req, res) => {
+    var signup = req.body;
+    if (signup.username != undefined && signup.username != null && signup.username != '' &&
+        signup.password != undefined && signup.password != null && signup.password != '' &&
+        signup.confirmPassword != undefined && signup.confirmPassword != null && signup.confirmPassword != '') {
+
+        try {
+            var result = await accountService.insert(signup);
+        }
+        catch (err) {
+            res.status(500);
+            res.send(err);
+        }
+    }
+    res.status(400);
     return res.send()
 });
 

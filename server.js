@@ -20,6 +20,10 @@ app.use(bodyParser.json());
 //import morgan from 'morgan';
 //app.use(morgan('dev'));
 
+// setting authentication
+import jwtMiddleware from './src/rest-api/middlewares/jwt-middleware.js';
+jwtMiddleware.load(app);
+
 // register routers
 import routerRegistrar from './src/rest-api/_app/router-registrar.js';
 routerRegistrar.load(app);
@@ -34,6 +38,10 @@ app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    //if (err.name === 'UnauthorizedError') {
+    //    res.status(401).send('invalid token...');
+    //}
 
     // render the error page
     res.status(err.status || 500);

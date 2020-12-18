@@ -1,7 +1,7 @@
 
 var authentication = {
-    issuer: "",
-    audience: "",
+    issuer: 'http://issuer',
+    audience: 'http://myapi/protected',
     securityKey: "securityKey"
 };
 

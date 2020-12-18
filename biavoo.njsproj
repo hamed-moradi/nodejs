@@ -41,6 +41,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\rest-api\helpers\jwt-helper.js" />
+    <Content Include="src\rest-api\middlewares\jwt-middleware.js" />
     <Content Include="src\rest-api\_app\router-registrar.js" />
     <Content Include="server.js" />
     <Content Include="src\model\_app\constants.js" />
@@ -76,6 +77,7 @@
     <Folder Include="src\model\view-models\" />
     <Folder Include="src\rest-api\" />
     <Folder Include="src\rest-api\helpers\" />
+    <Folder Include="src\rest-api\middlewares\" />
     <Folder Include="src\rest-api\_app\" />
     <Folder Include="src\rest-api\routes\" />
   </ItemGroup>

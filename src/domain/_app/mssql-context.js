@@ -2,12 +2,12 @@ import mssql from 'mssql';
 import appSetting from "../../../app-settings.js";
 
 const config = {
-    server: appSetting.connectionString.msSql.server,
-    user: appSetting.connectionString.msSql.user,
-    password: appSetting.connectionString.msSql.password,
+    server: appSetting.connectionString.mssql.server,
+    user: appSetting.connectionString.mssql.user,
+    password: appSetting.connectionString.mssql.password,
     // port: 1433,
     // domain: ''
-    database: appSetting.connectionString.msSql.database,
+    database: appSetting.connectionString.mssql.database,
     // connectionTimeout: 10000,
     // requestTimeout: 10000,
     // stream: false,

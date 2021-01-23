@@ -37,14 +37,10 @@
     <Content Include="app-settings.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\model\view-models\account-viewModel.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="src\rest-api\helpers\jwt-helper.js" />
     <Content Include="src\rest-api\middlewares\jwt-middleware.js" />
     <Content Include="src\rest-api\_app\router-registrar.js" />
     <Content Include="server.js" />
-    <Content Include="src\model\_app\constants.js" />
     <Content Include="src\application\services\customer-service.js" />
     <Content Include="src\application\services\problem.js" />
     <Content Include="src\application\services\account-service.js" />
@@ -52,8 +48,6 @@
     <Content Include="src\domain\_app\mssql-context.js" />
     <Content Include="src\domain\collections\problem.js" />
     <Content Include="src\domain\collections\user.js" />
-    <Content Include="src\rest-api\helpers\response.js" />
-    <Content Include="src\model\_app\general.js" />
     <Content Include="src\rest-api\routes\customer-router.js" />
     <Content Include="src\rest-api\routes\home-router.js" />
     <Content Include="src\rest-api\routes\account-router.js" />
@@ -62,7 +56,6 @@
   <ItemGroup>
     <Folder Include="src\" />
     <Folder Include="src\application\_app\" />
-    <Folder Include="src\model\" />
     <Folder Include="src\assets\utility\" />
     <Folder Include="src\infrastructure\" />
     <Folder Include="src\application\" />
@@ -72,9 +65,6 @@
     <Folder Include="src\assets\" />
     <Folder Include="src\domain\entities\" />
     <Folder Include="src\domain\collections\" />
-    <Folder Include="src\model\binding-models\" />
-    <Folder Include="src\model\_app\" />
-    <Folder Include="src\model\view-models\" />
     <Folder Include="src\rest-api\" />
     <Folder Include="src\rest-api\helpers\" />
     <Folder Include="src\rest-api\middlewares\" />

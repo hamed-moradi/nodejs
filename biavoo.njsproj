@@ -68,6 +68,7 @@
     <Folder Include="src\rest-api\" />
     <Folder Include="src\rest-api\helpers\" />
     <Folder Include="src\rest-api\middlewares\" />
+    <Folder Include="src\rest-api\validators\" />
     <Folder Include="src\rest-api\_app\" />
     <Folder Include="src\rest-api\routes\" />
   </ItemGroup>

@@ -1,13 +1,13 @@
 import mssql from 'mssql';
-import appSetting from "../../../app-settings.js";
+import config from "../../infrastructure/config.js";
 
-const config = {
-    server: appSetting.connectionString.mssql.server,
-    user: appSetting.connectionString.mssql.user,
-    password: appSetting.connectionString.mssql.password,
+const connFig = {
+    server: config.connectionString.mssql.server,
+    user: config.connectionString.mssql.user,
+    password: config.connectionString.mssql.password,
     // port: 1433,
     // domain: ''
-    database: appSetting.connectionString.mssql.database,
+    database: config.connectionString.mssql.database,
     // connectionTimeout: 10000,
     // requestTimeout: 10000,
     // stream: false,
@@ -15,7 +15,7 @@ const config = {
     // pool: { max: 10, min: 0, fifo: true, idleTimeoutMillis: 10000, acquireTimeoutMillis: 512 }
 };
 
-const pool = new mssql.ConnectionPool(config);
+const pool = new mssql.ConnectionPool(connFig);
 const poolConnect = pool.connect();
 //pool.close();
 

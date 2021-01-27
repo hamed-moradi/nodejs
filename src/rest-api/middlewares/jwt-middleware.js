@@ -1,12 +1,12 @@
 
 import jwt from 'express-jwt';
-import appSetting from '../../../app-settings.js';
+import config from '../../infrastructure/config.js';
 
 let load = (app) => {
     app.use(jwt({
-        issuer: appSetting.authentication.issuer,
-        audience: appSetting.authentication.audience,
-        secret: appSetting.authentication.securityKey,
+        issuer: config.authentication.issuer,
+        audience: config.authentication.audience,
+        secret: config.authentication.securityKey,
         credentialsRequired: false,
         algorithms: ['RsaPssParams', 'EcdsaParams', 'AesCmacParams'],
         getToken: function fromHeaderOrQuerystring(req) {

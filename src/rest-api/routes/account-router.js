@@ -4,7 +4,6 @@ let router = express.Router({ caseSensitive: false });
 
 import { check, validationResult } from 'express-validator';
 
-import resHelper from '../helpers/response.js';
 import accountService from '../../application/services/account-service.js';
 import jwtHelper from "../helpers/jwt-helper.js";
 

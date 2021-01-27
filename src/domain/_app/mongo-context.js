@@ -1,7 +1,7 @@
 
 import mongoose from 'mongoose';
-import appSetting from '../../../app-settings.js';
+import config from '../../infrastructure/config.js';
 
-mongoose.connect(appSetting.connectionString.mongo, { useNewUrlParser: true });
+mongoose.connect(config.connectionString.mongo, { useNewUrlParser: true });
 
 export default mongoose;

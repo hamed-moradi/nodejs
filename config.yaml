@@ -1,0 +1,16 @@
+authentication:
+    issuer: "http://issuer"
+    audience: "http://myapi/protected"
+    securityKey: "securityKey"
+
+connectionString:
+    mssql:
+        server: "127.0.0.1"
+        user: "sa"
+        password: "123"
+        database: "biavoo"
+    mongo: "mongodb://localhost:27017/db"
+
+server:
+    domain: ""
+    port: ""

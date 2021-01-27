@@ -20,6 +20,9 @@ app.use(bodyParser.json());
 //import morgan from 'morgan';
 //app.use(morgan('dev'));
 
+//import config from './src/infrastructure/config.js';
+//console.log(config.connectionString.mssql.get());
+
 // setting authentication
 import jwtMiddleware from './src/rest-api/middlewares/jwt-middleware.js';
 jwtMiddleware.load(app);
